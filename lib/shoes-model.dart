@@ -1,87 +1,91 @@
 import 'package:flutter/material.dart';
 
-class MaskModel {
+
+class ShoeModel {
   final String name;
   final String assetname;
   final String description;
   final double price;
   final Color color;
 
-  MaskModel(
+  ShoeModel(
       {this.name, this.assetname, this.price, this.description, this.color});
 }
 
-List<MaskModel> profList = [
-  MaskModel(
-    name: "Surgon Mask",
+List<ShoeModel> profList1 = [
+  ShoeModel(
+    name: "Nike Jordans",
     description: "lorem ipsum",
-    assetname: "assets/mask8.png",
+    assetname: "assets/1.png",
     price: 8.0,
     color: Color(0xffbcdaac),
   ),
-  MaskModel(
-    name: "Student Mask",
+  ShoeModel(
+    name: "Coughar ",
     description: "lorem ipsum",
-    assetname: "assets/mask4.png",
+    assetname: "assets/1.png",
     price: 8.0,
     color: Color(0xffeaaeaf),
   ),
-  MaskModel(
-    name: "Doctor Mask",
+  ShoeModel(
+    name: "Nike Jordans",
     description: "lorem ipsum",
-    assetname: "assets/mask2.png",
+    assetname: "assets/2.png",
     price: 8.0,
     color: Color(0xffEFDBA9),
   ),
-  MaskModel(
+  ShoeModel(
     name: "Office Mask",
-    description: "lorem ipsum",
-    assetname: "assets/mask6.png",
+    description: "Coughar ",
+    assetname: "assets/3.png",
     price: 8.0,
     color: Color(0xffA4afb0),
   ),
 ];
 
-List<MaskModel> designerList = [
-  MaskModel(
-    name: "Cultural Mask",
+List<ShoeModel> designerList1 = [
+  ShoeModel(
+    name: "Coughar ",
     description: "lorem ipsum",
-    assetname: "assets/mask1.png",
+    assetname: "assets/1.png",
     price: 8.0,
     color: Color(0xffFFD0BB),
   ),
-  MaskModel(
-    name: "Flower Mask",
+  ShoeModel(
+    name: "Nike Joran Highs Retro",
     description: "lorem ipsum",
-    assetname: "assets/mask5.png",
+    assetname: "assets/2.png",
     price: 8.0,
     color: Color(0xffD9D9D9),
   ),
-  MaskModel(
-    name: "Sclupture Mask",
+  ShoeModel(
+    name: "Coughar ",
     description: "lorem ipsum",
-    assetname: "assets/mask7.png",
+    assetname: "assets/3.png",
     price: 8.0,
     color: Color(0xffC0EFA9),
   ),
-  MaskModel(
-    name: "Pink Mask",
+  ShoeModel(
+    name: "Nike Joran Highs Retro",
     description: "lorem ipsum",
-    assetname: "assets/mask3.png",
+    assetname: "assets/1.png",
     price: 8.0,
     color: Color(0xffE9C9F8),
   ),
 ];
 
 
-List<String> masks = [
-  "assets/mask2.png",
-  "assets/mask3.png",
-  "assets/mask1.png",
-  "assets/mask4.png",
-  "assets/mask5.png",
-  "assets/mask6.png",
-  "assets/mask7.png",
-  "assets/mask8.png",
+List<String> shoes = [
+  "assets/1.png",
+  "assets/2.png",
+  "assets/3.png",
+  "assets/1.png",
+  "assets/2.png",
+  "assets/3.png",
+  "assets/1.png",
+  "assets/2.png",
+ 
+ 
+
 ];
 

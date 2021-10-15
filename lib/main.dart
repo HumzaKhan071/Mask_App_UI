@@ -4,7 +4,11 @@ import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mask_app_ui/Tabs.dart';
 import 'package:mask_app_ui/mask-details.dart';
+import 'package:mask_app_ui/shoes-details.dart';
+import 'package:mask_app_ui/shoes-model.dart';
 import 'mask-model.dart';
+
+
 
 void main()
 {
@@ -83,12 +87,19 @@ class Home extends StatelessWidget {
                                 children: [
                                   MaskItem(maskData: profList[0],),
                                   MaskItem(maskData: profList[2],),
+                                  ShoeItem(shoeData: profList1[0],),
+                                  ShoeItem(shoeData: profList1[2],),
+                                  
                                 ],),
                               Spacer(),
                               Column(
                                 children: [
                                   MaskItem(maskData: profList[1],),
                                   MaskItem(maskData: profList[3],),
+                                  ShoeItem(shoeData: profList1[1],),
+                                  ShoeItem(shoeData: profList1[3],),
+
+                                  
                                 ],),
                               SizedBox(height: 50,)
 
@@ -119,12 +130,16 @@ class Home extends StatelessWidget {
                                 children: [
                                   MaskItem(maskData: designerList[0],),
                                   MaskItem(maskData: designerList[2],),
+                                  ShoeItem(shoeData: designerList1[0],),
+                                  ShoeItem(shoeData: designerList1[2],),
                                 ],),
                               Spacer(),
                               Column(
                                 children: [
                                   MaskItem(maskData: designerList[1],),
                                   MaskItem(maskData: designerList[3],),
+                                  ShoeItem(shoeData: designerList1[0],),
+                                  ShoeItem(shoeData: designerList1[2],),
                                 ],),
                               SizedBox(height: 50,)
 
@@ -190,6 +205,58 @@ class MaskItem extends StatelessWidget {
                   ),
                 ) ),
             Positioned(top:10,right: 10,child: LikeButtons(),),
+          ],
+
+        ),
+      ),
+    );
+  }
+}
+
+class ShoeItem extends StatelessWidget {
+  final ShoeModel shoeData;
+
+  ShoeItem({this.shoeData});
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: ()=>Navigator.push(context, CupertinoPageRoute(builder: (ctx)=>ShoeDetails(shoeData: shoeData,))),
+      child: Container(
+        margin: EdgeInsets.only(bottom: 20),
+        child: Stack(
+          children: [
+            Container(
+              height: MediaQuery.of(context).size.width * 0.5,
+              width:  MediaQuery.of(context).size.width * 0.4,
+              padding: EdgeInsets.only(bottom: MediaQuery.of(context).size.width * 0.1,left: 10,right: 10),
+              decoration: BoxDecoration(
+                color: shoeData.color,
+                borderRadius: BorderRadius.circular(28),
+              ),
+              child: Image.asset(shoeData.assetname),
+            ),
+            Positioned(
+              bottom: 0,
+                child:ClipPath(
+                  clipper: ItemClipper(),
+                  child: Container(
+                    height: MediaQuery.of(context).size.width * 0.15,
+                    width: MediaQuery.of(context).size.width * 0.4,
+                    padding: EdgeInsets.only(bottom: 10),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.only(bottomRight: Radius.circular(30),bottomLeft: Radius.circular(30),
+
+                      )
+                    ),
+                    alignment: Alignment.bottomCenter,
+                    child: Text(shoeData.name,
+                      style: GoogleFonts.openSans(fontWeight: FontWeight.w500,fontSize: 20),
+                    ),
+                  ),
+                ) ),
+            Positioned(top:10,right: 10,child: LikeButtons1(),),
           ],
 
         ),

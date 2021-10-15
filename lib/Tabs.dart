@@ -12,6 +12,7 @@ class Tabs extends StatelessWidget {
         MyTab(text: 'Socks', isSelected: false),
         MyTab(text: 'Hats', isSelected: false),
         MyTab(text: 'Gloves', isSelected: false),
+         MyTab(text: 'Shoes', isSelected: true),
       ],
     );
   }

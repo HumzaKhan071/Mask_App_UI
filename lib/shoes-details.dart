@@ -3,12 +3,14 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mask_app_ui/mask-model.dart';
+import 'shoes-model.dart';
+import 'mask-details.dart';
 
 String RandomText="It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 ";
-class MaskDetails extends StatelessWidget {
+class ShoeDetails extends StatelessWidget {
 
-  final MaskModel maskData;
-  MaskDetails({this.maskData});
+  final ShoeModel shoeData;
+  ShoeDetails({this.shoeData});
 
   @override
   Widget build(BuildContext context) {
@@ -61,13 +63,13 @@ class MaskDetails extends StatelessWidget {
                 height: height *0.6,
                 width: width,
                 decoration: BoxDecoration(
-                  color: maskData.color,
+                  color: shoeData.color,
                   borderRadius: BorderRadius.only(
                     topRight: Radius.circular(30),
                       topLeft: Radius.circular(30),
                 )
                 ),
-                child: Image.asset(maskData.assetname),
+                child: Image.asset(shoeData.assetname),
 
               ),
             ),
@@ -91,7 +93,7 @@ class MaskDetails extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     SizedBox(height: height * 0.07,),
-                    Text(maskData.name,
+                    Text(shoeData.name,
                       style: GoogleFonts.openSans(
                         fontWeight: FontWeight.w700,
                         fontSize: 30,
@@ -138,7 +140,7 @@ class MaskDetails extends StatelessWidget {
     color: Colors.white,
     borderRadius: BorderRadius.circular(25),
     ),
-                            child: Image.asset(masks[i]),
+                            child: Image.asset(shoes[i]),
 
                           );
 
@@ -149,7 +151,7 @@ class MaskDetails extends StatelessWidget {
                     Row(
 
                       children: [
-                        Text("\$  ${maskData.price}",
+                        Text("\$  ${shoeData.price}",
                         style: GoogleFonts.openSans(
                           fontWeight: FontWeight.w700,
                           fontSize: 40,
@@ -159,9 +161,7 @@ class MaskDetails extends StatelessWidget {
 
                           ),
 
-                      Spacer(
-                        
-                      ),
+                      Spacer(),
                       Container(
 
                         height: height *0.1,
@@ -177,7 +177,6 @@ class MaskDetails extends StatelessWidget {
                             fontWeight: FontWeight.w700,
                             fontSize: 25,
                             color: Colors.black,
-
 
                           ),
 
@@ -203,14 +202,14 @@ class MaskDetails extends StatelessWidget {
   }
 }
 
-class LikeButtons extends StatefulWidget {
-  const LikeButtons({Key key}) : super(key: key);
+class LikeButtons1 extends StatefulWidget {
+  const LikeButtons1({Key key}) : super(key: key);
 
   @override
-  _LikeButtonsState createState() => _LikeButtonsState();
+  _LikeButtons1State createState() => _LikeButtons1State();
 }
 
-class _LikeButtonsState extends State<LikeButtons> {
+class _LikeButtons1State extends State<LikeButtons1> {
   bool isLiked=false;
   Color bgColor=Colors.white;
   Color heartColor=Colors.grey;
